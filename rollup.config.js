@@ -5,6 +5,7 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 
+const fs = require('fs');
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -40,12 +41,21 @@ export default {
 		svelte({
 			compilerOptions: {
 				// enable run-time checks when not in production
-				dev: !production
+				dev: !production,
+				
+				css: css => {
+					css.write('public/build/bundle.css');
+				}
 			}
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
+		css({ 
+			output: function (styles, styleNodes) {
+				console.log("Writing extra.css");
+				fs.writeFileSync('extra.css', styles);
+			}	
+		}),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
