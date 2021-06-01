@@ -51,10 +51,7 @@ export default {
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ 
-			output: function (styles, styleNodes) {
-				console.log("Writing extra.css");
-				fs.writeFileSync('extra.css', styles);
-			}	
+			output: 'extra.css'	
 		}),
 
 		// If you have external dependencies installed from

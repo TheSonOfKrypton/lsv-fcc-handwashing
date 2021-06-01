@@ -1,7 +1,16 @@
+<script>
+	import Timer from './Timer.svelte';
+	import HowTo from './HowTo.svelte';
+</script>
+
 <style>
 	h1 {
-		color: red;
+		text-align: center;
 	}
 </style>
 
-<h1>Test</h1>
+<h1>Handwashing App</h1>
+
+<Timer />
+
+<HowTo />
