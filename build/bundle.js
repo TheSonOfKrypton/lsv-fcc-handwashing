@@ -325,7 +325,7 @@ var app = (function () {
     			attr(span, "class", "sr-only");
     			attr(div0, "class", "progress-bar svelte-1wf43gm");
     			set_style(div0, "width", /*progress*/ ctx[0] + "%");
-    			attr(div1, "bp", "offest-5@md 4@md 12@sm");
+    			attr(div1, "bp", "offset-5@md 4@md 12@sm");
     			attr(div1, "class", "progress-container svelte-1wf43gm");
     			attr(div2, "bp", "grid");
     		},
